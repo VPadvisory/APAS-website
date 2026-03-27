@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APAS</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="header">
+<nav>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<div class="logo">
+<img src="logo.png" class="logo-img">
+<span>APAS & Associates LLP, Chartered Accountants</span>
+</div>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="team.html">Team</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="news.html">News & Updates</a></li>
+</ul>
+</nav>
+</header>
+
+<div id="sideMenu" class="side-menu">
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="team.html">Team</a>
+<a href="contact.html">Contact</a>
+<a href="news.html">News & Updates</a>
+</div>
+<div id="overlay" class="overlay" onclick="closeMenu()"></div>
+
+<section class="hero">
+<div>
+<h1>Compliance Made Confident, Audits Made Clear</h1>
+<p>We deliver audits with clarity and compliance with confidence, empowering businesses to grow on a foundation of trust</p>
+</div>
+</section>
+<section class="who-we-are">
+    <div class="who-container">
+
+        <!-- LEFT IMAGE -->
+        <div class="who-image">
+            <img src="about.jpg" alt="About APAS & Associates">
+        </div>
+
+        <!-- RIGHT TEXT -->
+        <div class="who-text">
+            <h2>Who We Are</h2>
+            <p>
+                APAS & Associates is a professionally driven Chartered Accountancy firm established in the year 2021 which is committed to delivering excellence in audit, taxation, and advisory services. With a strong foundation built on integrity, precision, and deep industry knowledge, we assist businesses in navigating complex financial and regulatory landscapes with confidence.
+            </p>
+
+            <p>
+                Our approach goes beyond compliance—we partner with our clients to provide strategic insights, mitigate risks, and enhance operational efficiency. Backed by a team of experienced professionals, we serve a diverse range of industries with tailored solutions that align with evolving business needs.
+            </p>
+
+            <P>Our firm is committed to delivering sound professional services with a strong emphasis on client satisfaction through timely and effective execution. We believe that open, ongoing communication is essential to understanding client requirements and ensuring responsive solutions. By leveraging the extensive experience and expertise of our partners, we have developed a risk‑based audit approach that not only ensures compliance but also highlights critical areas where business controls can be strengthened, empowering management to take proactive action.
+We place great importance on bridging the gap between client expectations and service delivery. Defining requirements clearly, seeking regular feedback, and maintaining transparent communication are central to our philosophy. This client‑centric approach allows us to enhance the quality of services rendered, ensuring that every engagement builds trust, adds value, and supports sustainable business growth.
+</P>
+        </div>
+
+    </div>
+</section>
+<section class="about-sectors">
+    <h1 class="section-title">Sectors we currently serve</h1>
+
+    <div class="sectors-grid">
+
+        <div class="sector">
+            <img src="logistics.jpg" alt="Logistics">
+            <h3>LOGISTICS</h3>
+        </div>
+
+        <div class="sector">
+            <img src="pharma.jpg" alt="Pharmaceutical">
+            <h3>PHARMACEUTICAL</h3>
+        </div>
+
+        <div class="sector">
+            <img src="real estate.jpg" alt="Real Estate">
+            <h3>REAL ESTATE</h3>
+        </div>
+
+        <div class="sector">
+            <img src="restaurant logo.webp" alt="Restaurant">
+            <h3>RESTAURANT</h3>
+        </div>
+
+        <div class="sector">
+            <img src="education logo.jpg" alt="Education">
+            <h3>EDUCATION</h3>
+        </div>
+
+        <div class="sector">
+            <img src="em.jpg" alt="Event Management">
+            <h3>EVENT MANAGEMENT</h3>
+        </div>
+        <div class="sector">
+            <img src="interior designs.avif" alt="INTERIOR ">
+            <h3>INTERIOR DESIGNERS</h3>
+        </div>
+        <div class="sector">
+            <img src="textile.jpg" alt="tm">
+            <h3>TEXTILE MANUFACTURERS</h3>
+        </div>
+        <div class="sector">
+            <img src="healthcare.png" alt="HC">
+            <h3>HEALTHCARE</h3>
+        </div>
+        <div class="sector">
+            <img src="SECTION-8 COMPANY.jpg" alt="8 sector">
+            <h3>SECTOR 8 COMPANY</h3>
+        </div>
+        <div class="sector">
+            <img src="retail.avif" alt="RETAIL">
+            <h3>RETAIL</h3>
+        </div>
+        <div class="sector">
+            <img src="consulting.png" alt="HC">
+            <h3>CONSULTING</h3>
+        </div>
+    </div>
+</section>
+
+<footer>© APAS & Associates LLP</footer>
+
+<script>
+function toggleMenu(){
+const menu = document.getElementById("sideMenu");
+const overlay = document.getElementById("overlay");
+
+menu.classList.toggle("active");
+overlay.classList.toggle("active");
+}
+
+function closeMenu(){
+const menu = document.getElementById("sideMenu");
+const overlay = document.getElementById("overlay");
+
+menu.classList.remove("active");
+overlay.classList.remove("active");
+}
+</script>
+<script src="script.js"></script>
+</body>
+</html>
+

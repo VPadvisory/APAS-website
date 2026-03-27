@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>News and Updates |APAS </title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="header">
+
+<nav>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<div class="logo">
+<img src="logo.png" class="logo-img">
+<span>APAS & Associates LLP , Chartered Accountants</span>
+</div>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="team.html">Team</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<div id="sideMenu" class="side-menu">
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="team.html">Team</a>
+<a href="contact.html">Contact</a>
+<a href="news.html">News & Updates</a>
+</div>
+
+</header>
+  <title>News & Blog</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    #blog {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .post {
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .post:hover {
+      transform: translateY(-5px);
+    }
+
+    .post img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .post h3 {
+      margin: 10px 0;
+    }
+
+    .post p {
+      color: #555;
+    }
+
+    .post small {
+      color: gray;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>News & Blog</h2>
+
+<div id="blog"></div>
+
+<script>
+const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT6VDCrZ15pMJ4l2OMogmq-73ROo4cA_owLtL8jDc3GJF6HIJRLLpTqtxC6RN4z7x0q6q3R1oRE88RF/pub?output=tsv";
+
+fetch(sheetURL)
+  .then(res => res.text())
+  .then(data => {
+    const rows = data.split("\n").slice(1);
+    const blogDiv = document.getElementById("blog");
+
+    rows.reverse().forEach(row => {
+      const cols = row.split("\t"); // 👈 TAB separated (SAFE)
+
+      const id = cols[0]?.trim();
+      const title = cols[1]?.trim();
+      const content = cols[2]?.trim();
+      const date = cols[3]?.trim();
+      const image = cols[4]?.trim();
+
+      if (!id || !title) return;
+
+      const shortText = content.substring(0, 120) + "...";
+
+  blogDiv.innerHTML += `
+  <div class="post">
+    ${image ? `<img src="${image}" />` : ""}
+    
+    <div class="post-content">
+      <h3>${title}</h3>
+      <a class="read-btn" href="post.html?id=${id}">Read More</a>
+    </div>
+  </div>
+`;
+    });
+  });
+
+function openPost(id) {
+  window.location.href = "post.html?id=" + id;
+}
+</script>
+<script>
+function toggleMenu(){
+const menu = document.getElementById("sideMenu");
+const overlay = document.getElementById("overlay");
+
+menu.classList.toggle("active");
+overlay.classList.toggle("active");
+}
+
+function closeMenu(){
+const menu = document.getElementById("sideMenu");
+const overlay = document.getElementById("overlay");
+
+menu.classList.remove("active");
+overlay.classList.remove("active");
+}
+</script>
+</body>
+</html>
