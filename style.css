@@ -844,3 +844,14 @@ h2 {
 .contact-modern a {
     color: #111 !important;
 }
+
+.content {
+  line-height: 1.8;
+  color: #333;
+  white-space: normal;
+}
+
+.content br {
+  display: block;
+  margin-bottom: 10px;
+}
